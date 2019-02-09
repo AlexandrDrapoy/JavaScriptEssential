@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AlexDrapoy_JS_HW_2.3</title>
+    <script>
+        var x=+prompt("Введіть ширину прямокутника",2);
+        var y=+prompt("Введіть довжину прямокутника",2);
+        var count=0;
+        
+        if (x==false||y==false||x==String||y==String||x<=0||y<=0) 
+        {
+            document.write("Incorect value");
+            
+        } 
+        
+        for(var xSq=0; xSq<x; xSq++)
+        {
+            for(var ySq=0; ySq<y; ySq++)
+            {
+            document.write(" * ");
+            }
+            document.write("<br />")
+        }
+        //прямокутний трикутник
+        document.write("<hr />")
+        for(xSq=0; xSq<x; xSq++ )
+        {
+            for(ySq=count,x=y; ySq<y; ySq++ )
+            {
+            document.write(" * ");
+            }
+            document.write("<br />");
+            count=++count;
+        }
+        //трикутник
+        if ((x%2)==0){ x=++x;}
+        y=Math.trunc((x*1.73)/2);
+        count=x;
+        var countT=x;
+        if ((countT%2)==1){countT=++countT;x=++x;}
+        document.write("<hr />");
+        for(ySq=0; ySq<=y; ySq++)
+        {
+            for(xSq=count; xSq<x; xSq++)
+            {
+                document.write(" &nbsp ");
+            }
+            count=--count;
+            for(xSq=(x-countT); xSq<=x; xSq++)
+            {
+                document.write("*");
+            }
+            countT=(countT-2);
+            document.write("<br />");    
+        }
+        //romb
+        document.write("<hr />");
+        //top
+        
+        count=Math.trunc(x/2)-1;
+        countT=0;
+        for(ySq=0; ySq<y; ySq++)
+        {
+            for(xSq=count; xSq<=x; xSq++)
+            {
+                document.write(" &nbsp ");
+            }
+            count=++count;
+            for(xSq=(x-countT); xSq<=x; xSq++)
+            {
+                document.write("*");
+            }
+            countT=(countT+2);
+            document.write("<br />");
+        }
+        //bottom
+        count=x;
+        countT=-1;
+        
+       x=++x;
+        for(ySq=0; ySq<=y; ySq++)
+        {
+            for(xSq=count; xSq<x; xSq++)
+            {
+                document.write(" &nbsp ");
+            }
+            count=--count;
+            for(xSq=countT; xSq<=x; xSq++)
+            {
+                document.write("*");
+            }
+            countT=(countT+2);
+            document.write("<br />");
+        }
+    </script>
+
+</head>
+<body>
+
+
+</body>
+</html>
