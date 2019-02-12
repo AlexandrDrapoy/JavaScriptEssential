@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <Script>
+        var mas = [11,4,7,-22,-5,2,14,-17,-8,1,29,14];
+        var masOne=[];
+        var masZero=[];
+        var x;
+        for (var i=0; i<mas.length; i++)
+            {
+                x=mas[i];
+                if(( x % 2) == 0)
+                    {
+                        masZero.unshift(x);
+                          
+                    }   
+                    else 
+                        {
+                            masOne.unshift(x);
+                            
+                        }
+            }
+        for (i=0; i<masZero.length;i++)
+            {
+                masZero.sort(function(x,y)
+                {
+                    return y-x;
+                })
+            }
+        for (i=0; i<masOne.length;i++)
+            {
+                masOne.sort(function(x,y)
+                {
+                    return x-y;
+                })
+            }
+
+        for (i=0; i<masZero.length;i++){
+
+        masOne.push(masZero[i]); 
+        }
+        console.log(masZero + ' namberZero'); 
+        console.log(masOne + ' namberOne'); 
+        document.write("<p>Відсортований масив " + masOne );
+    </Script>
+
+</head>
+<body>
+    
+</body>
+</html>

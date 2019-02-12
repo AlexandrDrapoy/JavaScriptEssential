@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_HW_4.1</title>
+    <script>
+        function Calculate(x,y,z)
+        {
+            var avg=(x+y+z)/3;
+            document.write("Середнє арифметичне від "+x+" ,"+y+" та "+z+" дорівнює  "+avg+"<br />");
+        }
+        Calculate(10,20,30);
+        function Calculate1(x,y,z)
+        {
+            var mas=[x,y,z];
+            var avg=0;
+            for(var i=0; i<mas.length; i++)
+                {
+                    avg=avg+mas[i];
+                }
+            avg=avg/mas.length;
+            document.write("Середнє арифметичне від "+x+" ,"+y+" та "+z+" дорівнює  "+avg);
+        }
+        Calculate1(10,20,30);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

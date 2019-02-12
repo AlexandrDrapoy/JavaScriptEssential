@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var mas = [1,22,14,5,75,83,96, 60, 100, 32];
+        document.write(mas+'<br />'); 
+        startIndex=prompt("Введіть індекс початкового елемента від 0 до 9",1);
+        finishIndex=prompt("Введіть індекс того місця куди треба скопіювати 0 до 9",3);
+        var namber=mas.splice(startIndex,1);
+        mas.splice(finishIndex,0,namber);   
+            document.write("<b>"+mas+"</b>"); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
