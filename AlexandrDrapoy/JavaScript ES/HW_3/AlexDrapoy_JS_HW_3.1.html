@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 <script>
-
+    var newMas=[];
+    var i=0;
+    var nambers = prompt("Input new namber", "");
+    while(nambers != null)
+        {
+            newMas[i]=+nambers;
+            i=++i;
+            nambers = prompt("Input new namber", "");
+        }
+        document.write(newMas.join("|"));
+        for(i=0;i<newMas.length;i++)
+            {
+                if (newMas[i] == NaN)
+                {
+                    var d = newMas.splice(i,1);
+                }
+            }
+        for(i=0; i<newMas.length; i++)
+            {
+                var x=(i+1);
+                if (newMas[i]>newMas[x])
+                   {
+                        var el=newMas[x];
+                        newMas[x]=newMas[i];
+                        newMas[i]=el;
+                    }
+            }
+        document.write("<p> відсортований масив"+ newMas.join(" "));
 </script>
 </head>
 
