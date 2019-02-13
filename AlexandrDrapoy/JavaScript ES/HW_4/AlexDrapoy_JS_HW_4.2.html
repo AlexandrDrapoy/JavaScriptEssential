@@ -4,41 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS_HW_4.1</title>
+    <title>JS_HW_4.2</title>
     <script>
-        function Add(x,y)
+        var result;
+        var operation={
+        Add:function()
         {
-            var result=x+y;
+            result=x+y;
             document.write(x+"+"+y+"="+result);
-        }
-        function Sub(x,y)
+        },
+        Sub:function()
         {
-            var result=x-y;
+            result=x-y;
             document.write(x+"-"+y+"="+result);
-        }
-        function Mul(x,y)
+        },
+        Mul:function()
         {
-            var result=x*y;
+            result=x*y;
             document.write(x+"*"+y+"="+result);
-        }
-        function Div(x,y)
+        },
+        Div:function()
         {
-            var result=x/y;
-            document.write(x+"/"+y+"="+result);
+            if (y!==0){
+            result=x/y;
+            document.write(x+"/"+y+"="+result);}
+                else{document.write("ділення на 0 не можливе");}
         }
-        Calculate(10,20,30);
-        function Calculate1(x,y,z)
-        {
-            var mas=[x,y,z];
-            var avg=0;
-            for(var i=0; i<mas.length; i++)
+        }
+            var x=+prompt("Введіть перше число",);
+            var y=+prompt("Введіть друге число",);
+            var sim=prompt("введіть операцію для чисел + , - , * , / .",);
+            switch (sim) {
+                case "+": operation.Add();
+                            break;
+                case "-": operation.Sub();
+                            break;
+                case "*": operation.Mul();
+                            break;
+                case "/": operation.Div();
+                            break;
+                default:
                 {
-                    avg=avg+mas[i];
+                    document.write("Ви ввели не існуючий знак");
                 }
-            avg=avg/mas.length;
-            document.write("Середнє арифметичне від  "+x+" ,"+y+" та "+z+" дорівнює  "+avg);
-        }
-        Calculate1(10,20,30);
+                break;
+            }
+                    
+        
     </script>
 </head>
 <body>
