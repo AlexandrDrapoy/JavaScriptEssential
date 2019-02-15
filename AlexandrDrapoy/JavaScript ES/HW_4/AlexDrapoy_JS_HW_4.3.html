@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_HW_4.2</title>
+    <script>
+        var result;
+        function minPlus(x)
+            {
+                if (x>0){document.write("Ви ввели додатьнє число"+"<br />");}
+                    else if (x<0) {document.write("Ви ввели від'ємне число"+"<br />");}
+                        else {document.write("Ви ввели 0"+"<br />");}
+                document.write("<hr />");
+            }
+        function easyNamber(x)
+            {
+            if (x==0) {document.write("Ви ввели 0"+"<br />");}
+                else if(Math.abs(x)<=3&&x!==0){document.write(x+" просте число"+"<br />");}
+                    else{
+                        for (var i = 2;  i<= Math.abs(x/2); i++) 
+                            {
+                                if (x%i===0) 
+                                    {
+                                        document.write(x+" складне число"+"<br />");
+                                        var stop=1;
+                                        break;
+                                    }
+                            }
+                        if(stop!==1){document.write(x+" просте число"+"<br />");}
+                        }
+            document.write("<hr />");
+            }
+        function divNamber(x) 
+            {
+                var mN =[2,5,3,6,9];
+                for(var i=0; i<mN.length; i++)
+                    {
+                        if((x%mN[i])==0)
+                        {document.write("Число "+x+" ділиться на "+mN[i]+" без залишку"+"<br />");}
+                            else{document.write("Число "+x+" не ділиться на "+mN[i]+" без залишку"+"<br />");}
+                    }
+                document.write("<hr />");
+            }
+        
+            var x=+prompt("Введіть число",);
+            minPlus(x);
+            easyNamber(x);
+            divNamber(x);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
