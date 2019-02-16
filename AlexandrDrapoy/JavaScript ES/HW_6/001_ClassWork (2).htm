@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_CW_6.1</title>
+
+    <script>
+        // var arr = [
+        //     { name: 'BMW', price: 2300, model: 'X5', color: 'red' },
+        //     { name: 'Infinity', price: 4500, model: 'FX-35', color: 'white' },
+        //     { name: 'Honda', price: 3900, model: 'Accord', color: 'blue' },
+        //     { name: 'Ford', price: 1500, model: 'Focus', color: 'green' },
+        //     { name: 'BMW', price: 2300, model: 'X5', color: 'orange' },
+        //     { name: 'Ford', price: 5000, model: 'Fusion', color: 'white' },
+        //     { name: 'BMW', price: 1900, model: 'X3', color: 'blue' },
+        //     { name: 'Ford', price: 2300, model: 'Fiesta', color: 'black' },
+        //     { name: 'Infinity', price: 5300, model: 'FX-45', color: 'black' },
+        //     { name: 'Honda', price: 2500, model: 'Civic', color: 'red' },
+        // ]
+        // // - вывести все машины в тело документа
+        // // - вывести только Ford
+        // // - вывести только те, у которых стоимость более 4000
+        // // - вывести только те, у которых стоимость более 4000 и отсортировать в порядке возрастания цены
+        // // - вывести только белые и синие машины
+
+
+        // document.write('<hr>');
+        // arr.sort(function (x, y) {
+        //     return x.price - y.price
+        // });
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i].price < 4000) {
+
+        //         document.write(arr[i].name + ' ' + arr[i].price + '$ ' + '<br>')
+        //     }
+
+        // }
+
+        function input(numberOfPeople, country, numberOfDays)
+        {
+            var country=prompt("Input one of the country name(Turkey, Egypt, Bulgaria), ",Turkey);
+            var amountPerDay;
+                switch (country) {
+                    case 'Turkey': {
+                        amountPerDay = 100;
+                        break;
+                    }
+                    case 'Egypt': {
+                        amountPerDay = 120;
+                        break;
+                    }
+                    case 'Bulgaria': {
+                        amountPerDay = 75;
+                        break;
+                    }
+                    default: {
+                        alert('Our travel agency does not support trips to' + country);
+                        return;
+                    }
+                
+                
+            numberOfDays=prompt("Input nambers of day",7);
+            if (numberOfDays < 5) {
+                    alert('You can not take a trip less than 5 days.');
+                    return;}
+            numberOfPeople=prompt("Input nambers of people",2);
+            if (numberOfPeople < 1) {
+                alert('Error, you can not take a trip for 0 people');
+                return;}
+        }
+        function result(totalSum) 
+            {
+        alert('Congratulations!!! The vacation has been found. Total amount: ' + totalSum+" $");
+            }
+
+        function Vacation(numberOfPeople, country, numberOfDays) {
+            input(numberOfPeople, country, numberOfDays);
+            result(totalSum);
+            var amountPerDay;
+            var totalSum = 0;
+            totalSum = (numberOfDays > 10) ? numberOfDays * amountPerDay * numberOfPeople * 0.9 : numberOfDays * amountPerDay * numberOfPeople;
+            }
+
+
+
+
+        }
+        Vacation(3, 'Turkey', 10);
+        Vacation(2, 'Egypt', 11);
+
+        Vacation();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

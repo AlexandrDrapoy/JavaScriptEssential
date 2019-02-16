@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_HW_6.1</title>
+
+    <script>
+        
+        function input()
+        {
+            country=prompt("Input one of the country name(Turkey, Egypt, Bulgaria), ",'Turkey');
+                switch (country) 
+                {
+                    case 'Turkey': {
+                        amountPerDay = 100;
+                        break;
+                    }
+                    case 'Egypt': {
+                        amountPerDay = 120;
+                        break;
+                    }
+                    case 'Bulgaria': {
+                        amountPerDay = 75;
+                        break;
+                    }
+                    default: {
+                        alert('Our travel agency does not support trips to' + country);
+                        return;
+                            }
+        }
+            numberOfDays=prompt("Input nambers of day",7);
+            if (numberOfDays < 5) {
+                    alert('You can not take a trip less than 5 days.');
+                    return;}
+            numberOfPeople=prompt("Input nambers of people",2);
+            if (numberOfPeople < 1) {
+                alert('Error, you can not take a trip for 0 people');
+                return;}
+            return res={numberOfPeople, amountPerDay, numberOfDays};
+        }
+        function result(totalSum) 
+            {
+        alert('Congratulations!!! The vacation has been found. Total amount: ' + totalSum+" $");
+            }
+
+        function Vacation() {
+            var numberOfPeople;
+            var country;
+            var numberOfDays;
+            var amountPerDay;
+            var res={};
+            res=input();
+            var totalSum = 0;
+            totalSum = (res.numberOfDays > 10) ? res.numberOfDays * res.amountPerDay * res.numberOfPeople * 0.9 : res.numberOfDays * res.amountPerDay * res.numberOfPeople;
+            result(totalSum);
+            }
+
+
+        Vacation();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
