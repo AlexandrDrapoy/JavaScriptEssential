@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beta</title>
+    <title>JS_HW_3.1</title>
 <script>
     var newMas=[];
     var i=0;
-    var nambers = prompt("Input new namber", "");
+    var nambers = +prompt("Input new namber", "");
     while(nambers != null)
         {
             newMas[i]=+nambers;
@@ -18,22 +18,25 @@
         document.write(newMas.join("|"));
         for(i=0;i<newMas.length;i++)
             {
-                if (newMas[i] == NaN)
+                if (isNaN(newMas[i]))
                 {
-                    var d = newMas.splice(i,1);
+                    newMas.splice(i,1);
+                    if  (isNaN(newMas[i]))
+                        --i;
                 }
             }
         for(i=0; i<newMas.length; i++)
             {
-                var x=(i+1);
-                if (newMas[i]>newMas[x])
-                   {
+                for(var x=0; x<newMas.length; x++){
+                    if (newMas[x]>newMas[x+1])
+                        {
                         var el=newMas[x];
-                        newMas[x]=newMas[i];
-                        newMas[i]=el;
-                    }
+                        newMas[x]=newMas[x+1];
+                        newMas[x+1]=el;
+                        }
+                }
             }
-        document.write("<p> відсортований масив"+ newMas.join(" "));
+        document.write("<p> відсортований масив "+ newMas.join("||"));
 </script>
 </head>
 
