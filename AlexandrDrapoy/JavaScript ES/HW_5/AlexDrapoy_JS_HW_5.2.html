@@ -6,7 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS_HW_5.1</title>
     <script>
-//     Написать функцию с 3 аргументами: количество людей в поездке,
+        function Vacation(numberOfPeople=2, country=Turkey, numberOfDays=7)
+        {
+            var amountPerDay;
+            var totalSum;
+            switch (country) {
+                case 'Turkey':{ 
+                    amountPerDay = 120 ;
+                    break;
+                }
+                case 'Egypt':{ 
+                    amountPerDay = 100 ;
+                    break;
+                }
+                case 'Bulgaria':{ 
+                    amountPerDay = 75 ;
+                    break;
+                }
+                            
+                default: {
+                    document.write("Ми не працюємо з цією країною")
+                    return;
+                }
+                    
+            }
+            if (numberOfDays<5)
+                {document.write(" мінімальна довжина туру 5 днів");
+                return;
+            }
+            if (numberOfPeople<1){
+                document.write(" порожня потівка не можлива")
+                return;
+            }
+                totalSum = (numberOfDays > 10) ? numberOfDays * amountPerDay * numberOfPeople * 0.9 : numberOfDays * amountPerDay * numberOfPeople;
+                document.write("Щасливої подорожі!!!Ваш тур коштує всього лише " +totalSum);
+        }
+        
+        Vacation(4,'Egypt',10);
+
+        
+// Написать функцию с 3 аргументами: количество людей в поездке,
 //     количество дней (по умолчанию - 7 дней), страна путешествия 
 //   (Египет, Турция, Болгария);
 //    В зависимости от страны - вычисляется за один день сумма.
