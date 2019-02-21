@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_Adv_HW_1.1</title>
+    <script>
+        // ДЗ: создать родительский конструктор, 
+        // У родительского конструктора нужно создать поля 
+        // (статические - те что будут для всех - одинаковые). 
+        // От родителя должно быть наследование 2  функция конструкторов.
+        //  У каждого дочернего конструктора - по 3 экземпляра. 
+        //  Реализуйте свойства и методы отображения свойств для каждого наследника.
+        //  Александр, Дмитрий: континенты и страны
+        function Continent(_name, _aria){
+            this.name = _name;
+            this.aria = _aria;
+            this.infoOfContinent = function() {
+                document.write("Площа "+this.name+" дорівнює "+this.aria+"<br />");}
+        }
+        function Europa(_name, _aria,_chouseOfCountry)
+        {
+            
+            this.name = _name;
+            this.aria = _aria;
+            // this.chouseOfCountry=function(_chouseOfCountry){
+                
+            //    index = (_chouseOfCountry="EU") ? "country of European Union" : "non-aligned country";
+            //     return(result);                      
+            //     }
+                
+            this.nameUnion = function(){
+                this.chouseOfCountry = (_chouseOfCountry="EU") ? "country of European Union" : "non-aligned country";
+                document.write(this.name+"--"+this.chouseOfCountry+"<br />");                   
+            }
+        }
+        function Nothen_America(_name, _aria,_nambersOfState)
+        {
+            this.name=_name;
+            this.aria = _aria;
+            this.nambersOfState=_nambersOfState;
+            this.outputNambersOfState = function() {
+                document.write(this.name+" have a "+this.nambersOfState+" states"+"<br />" )
+            }
+        }
+        var continentEU = new Continent("Europa","10 523 000 км²"); 
+        continentEU.infoOfContinent();
+        
+        var continentNA = new Continent("Nothen_America","24 709 000 км²"); 
+        continentNA.infoOfContinent();
+        
+        Europa.prototype = continentEU ;
+        Nothen_America.prototype = continentNA;
+
+        var Pl = new Europa("Poland", "312 6793 км²", "EU");
+        Pl.infoOfContinent();
+        Pl.nameUnion();
+       
+        var Fr = new Europa("France", "671 308 км2", "EU");
+        Fr.infoOfContinent();
+        Fr.nameUnion();
+         
+        var Ua = new Europa("Ukraine","603 628 км²");
+        Ua.infoOfContinent();
+        Ua.nameUnion();
+       
+        var USA = new Nothen_America("Unated State of America", "9 519 431",50);
+        USA.infoOfContinent();
+        USA.outputNambersOfState();
+       
+        var CAN = new Nothen_America("Canada", "9 984 670 км²");
+        CAN.infoOfContinent();
+        
+       
+        var Mex = new Nothen_America("Mexica", "1 972 550 км²",31);
+        Mex.infoOfContinent();
+        Mex.outputNambersOfState();
+ 
+        
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
