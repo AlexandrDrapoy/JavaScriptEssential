@@ -31,8 +31,8 @@
             //     }
                 
             this.nameUnion = function(){
-                this.chouseOfCountry = (_chouseOfCountry="EU") ? "country of European Union" : "non-aligned country";
-                document.write(this.name+"--"+this.chouseOfCountry+"<br />");                   
+                this.chouseOfCountry = (_chouseOfCountry=="EU") ? "country of European Union" : "non-aligned country";
+                document.write(this.name+"--"+this.chouseOfCountry+"<hr />");                   
             }
         }
         function Nothen_America(_name, _aria,_nambersOfState)
@@ -41,7 +41,9 @@
             this.aria = _aria;
             this.nambersOfState=_nambersOfState;
             this.outputNambersOfState = function() {
-                document.write(this.name+" have a "+this.nambersOfState+" states"+"<br />" )
+                if (_nambersOfState!==undefined){
+                document.write(this.name+" have a "+this.nambersOfState+" states"+"<hr />" );}
+                   else {document.write("<hr />")}
             }
         }
         var continentEU = new Continent("Europa","10 523 000 км²"); 
@@ -61,7 +63,7 @@
         Fr.infoOfContinent();
         Fr.nameUnion();
          
-        var Ua = new Europa("Ukraine","603 628 км²");
+        var Ua = new Europa("Ukraine","603 628 км²","NA");
         Ua.infoOfContinent();
         Ua.nameUnion();
        
@@ -71,7 +73,7 @@
        
         var CAN = new Nothen_America("Canada", "9 984 670 км²");
         CAN.infoOfContinent();
-        
+        CAN.outputNambersOfState();
        
         var Mex = new Nothen_America("Mexica", "1 972 550 км²",31);
         Mex.infoOfContinent();
