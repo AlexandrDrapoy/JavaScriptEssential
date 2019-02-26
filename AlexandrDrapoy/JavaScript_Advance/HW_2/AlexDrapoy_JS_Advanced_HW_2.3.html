@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+>
+    <title>HW_JS_ADV_2.3</title>
+    <script>
+        var indexOfParagraf = 0;
+         function delOfParagraf(){    
+            if (indexOfParagraf<9){indexOfParagraf++;}
+                else{ while (mas.firstChild) 
+                        {
+                            mas.removeChild(mas.firstChild);
+                        }
+                    indexOfParagraf=0;
+                    }
+        }        
+        function createNewText(){
+            var mas = document.getElementById("mas");
+            var tagOfChapter=document.createElement('p');
+            tagOfChapter.innerHTML="lorem";
+            mas.appendChild(tagOfChapter);
+            setTimeout(delOfParagraf(mas), 300);
+        }
+      
+    </script>
+</head>
+<body>
+    <input type="button" onclick="createNewText()" style="width:10em;" value="Create Text"/>
+<div id="mas">
+
+</div>
+
+</body>
+</html>

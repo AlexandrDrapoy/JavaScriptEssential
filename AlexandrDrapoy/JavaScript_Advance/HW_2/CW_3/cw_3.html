@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var timeInDocument=document.getElementById("timeID");
+        timer= setInterval( function changeTime() {
+        for (var i=5;i>0;i--){
+            timeInDocument.innerText=i;
+            }
+            timeInDocument.innerText="";
+        },5)
+        ("Ви будете перенаправлені на YouTube через"+timer+ "с")
+    </script>
+</head>
+<body>
+ <p>Ви будете перенаправлені на YouTube через <b id="timerID">5</b> с</p>   
+</body>
+</html>

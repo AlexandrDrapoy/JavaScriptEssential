@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW_JS_Adv_2.2</title>
+    <!-- ДЗ №2 - создать страницу на которой есть 
+    5 блоков div( все красного цвета) и 
+    кнопка - при нажатии на которую выполняется функция. 
+    При первом нажатии - 1 блок становится зеленым - остальные остаются красными.
+    При втором - второй зеленым а все - красными. и т.д. 
+    Когда доходит до 6 нажатия - снова первый блок становится зеленым 
+    (начинается все с начала) -->
+    <style>
+    div {
+        background-color: red;
+        float: left;
+        width: 15em;
+        height: 15em;
+        margin: 2em;
+        border-radius: 5%;
+        
+    }
+    </style>
+    <script>
+        window.onload = function() {
+            
+        
+        var howMenyClick=0;
+        var interval;
+        var divArray = document.getElementsByTagName("div");
+        var stepOfColor;
+        var unstepOfColor;
+        
+        var getCommand = function (id) {
+            return document.getElementById(id);}
+        
+        getCommand("startForvard").onclick=function(){
+            stepOfColor = setInterval( changeColorForvard, 500);
+            clearInterval(unstepOfColor);
+            howMenyClick++;
+
+        }
+
+        getCommand("startBack").onclick=function(){
+            unstepOfColor = setInterval( changeColorBack, 500);
+            clearInterval(stepOfColor); 
+            if (howMenyClick>=0){
+            howMenyClick--;}
+    
+        }
+
+        getCommand("stop").onclick=function(){
+            if (stepOfColor!==0||stepOfColor==undefined){ clearInterval(stepOfColor);}
+            if(unstepOfColor!==0||unstepOfColor==undefined){clearInterval(unstepOfColor);} 
+            
+        }
+
+        function resetColor(){
+            var divArrayReset = document.getElementsByTagName("div");
+            for (var i=0; i<divArrayReset.length;i++){
+                divArrayReset[i].setAttribute("style","backgroundColor:red");}
+        }
+
+        var changeColorForvard = function (){
+                
+                resetColor();
+
+            if (howMenyClick<6){
+                divArray[howMenyClick].style.backgroundColor="green";
+                howMenyClick++;}
+            if(howMenyClick===5){ howMenyClick=0; }}
+        
+        var changeColorBack = function (){
+                resetColor();
+            // var divArray = document.getElementsByTagName("div");
+            if(howMenyClick===-1){ howMenyClick=4; }
+            if (howMenyClick>=0){
+                divArray[howMenyClick].style.backgroundColor="green";
+                howMenyClick--;}
+        } 
+
+        // var startForvard = setInterval( changeColorForvard, 2000);
+        // var startBack = setInterval( changeColorBack, 2000);
+
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <input type="button" id="startBack" value="Back"/>
+    <input type="button" id="startForvard" value="Forvard"/>
+    <input type="button" id="stop" value="STOP"/>
+</body>
+</html>
