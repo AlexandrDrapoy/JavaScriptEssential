@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <script>
+    var examplString='hyper text markup language';
+    var mas=[];
+    
+    function firstLaters(){
+        var takeSpace = " ";
+        var element=0;
+        mas=[element];
+        
+        while ((element=examplString.indexOf(takeSpace,element+1))!=-1)
+            { mas.push(element+1);} 
+        return(mas); 
+        }
+    
+    var abr=function(){
+        var abrOfString="";
+        firstLaters();
+        for(var i=0;i<mas.length;i++){
+            abrOfString+=examplString[mas[i]];
+        }
+    document.write(abrOfString.toUpperCase()+"<br />");
+    }
+    
+    var bigFirstLater=function(){
+        var uperCaseString="";
+        var last;
+        firstLaters();
+        for(var i=0;i<mas.length;i++){
+        if (i===(mas.length-1)){last=examplString.length;}
+            else{last=i+1;}
+        uperCaseString=uperCaseString+examplString[mas[i]].toUpperCase()+examplString.slice(mas[i]+1,mas[last] );
+        }
+        document.write(uperCaseString+"<br />");
+    }
+    document.write(examplString+"<br />");
+    bigFirstLater();
+    abr();
+    </script>
+</head>
+<body>
+    <!-- hyper text markup language -->
+</body>
+</html>
