@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW_JS_Adv_4.1</title>
+    <style>
+        body { overflow:  hidden; }
+
+    #topButt,#downButt,#leftButt,#rightButt{
+        
+        width: 10em;
+        height: 5em;
+        background-color: rgb(169, 149, 235);
+        position: relative;
+        margin: 1em;   
+        top:30%;
+        left: 15%;
+        visibility: visible;
+        transition: 1s;
+        border-radius: 50%;
+        border: 0px;
+    }
+       
+    #divS{
+        width:30em;
+        height: 30em;
+        background-color: blueviolet;
+        border-radius: 50%;
+        position: relative;
+        visibility: hidden;
+        transition:1s;
+        top:30%;
+        left:35%;
+        
+        }
+        
+    
+    </style>
+    <script>
+        window.onload=function() {
+            var divS=document.getElementById("divS");
+            var styleOfDiv=window.getComputedStyle(divS,null);
+            var topPos=parseFloat(styleOfDiv.top);
+            var leftPos=parseFloat(styleOfDiv.left);
+            var x=document.documentElement.clientWidth;
+            var y=document.documentElement.clientHeight;
+            
+
+            document.getElementById("topButt").onclick = function 
+            topMoving() {
+                divS.style.visibility="visible"
+                topPos < 20 ? topPos=0 : topPos-=20;
+                divS.style.top=topPos+'px';
+            }
+            
+            document.getElementById("downButt").onclick = function
+            downMoving() {
+                divS.style.visibility="visible"
+                topPos>(y-500) ? topPos=480 : topPos+=20;
+                divS.style.top=topPos+'px';
+            }
+            
+            document.getElementById("leftButt").onclick = function 
+            leftMoving() {
+                divS.style.visibility="visible"
+                leftPos<20 ? leftPos=0 : leftPos-=20;
+                divS.style.left=leftPos+'px';
+            }
+            
+            document.getElementById("rightButt").onclick = function 
+            rightMoving() {
+                divS.style.visibility="visible"
+                leftPos>(x-500) ? leftPos=480 : leftPos+=20;
+                divS.style.left=leftPos+'px';
+        }
+
+        }  
+    </script>
+</head>
+<body>
+    
+    <div id="divS">
+    <button id="topButt">TOP</button>
+    <button id="downButt">DOWN</button><br />
+    <button id="leftButt">LEFT</button>
+    <button id="rightButt">RIGHT</button>
+    </div>
+    
+</body>
+</html>
